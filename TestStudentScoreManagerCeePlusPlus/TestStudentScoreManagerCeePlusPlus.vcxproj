@@ -22,7 +22,7 @@
     <ProjectGuid>{0B8E4AAE-F113-4185-944D-E26AC2D5D62B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>TestStudentScoreManagerCeePlusPlus</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

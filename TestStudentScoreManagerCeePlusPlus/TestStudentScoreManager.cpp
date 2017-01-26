@@ -10,6 +10,7 @@
 #include "..\StudentScoreManagerCeePlusPlus\FileIO.h"
 #include "..\StudentScoreManagerCeePlusPlus\Student.h"
 #include "..\StudentScoreManagerCeePlusPlus\StudentScoreManager.h"
+#include "..\StudentScoreManagerCeePlusPlus\StudentCSVFileManager.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace std;
