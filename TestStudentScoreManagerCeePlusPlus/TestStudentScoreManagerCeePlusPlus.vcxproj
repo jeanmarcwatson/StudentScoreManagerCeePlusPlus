@@ -98,7 +98,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <AdditionalLibraryDirectories>$(VCInstallDir)UnitTest\lib;G:\Development\Visual C++\StudentScoreManagerCeePlusPlus\StudentScoreManagerCeePlusPlus\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>G:\Development\Visual C++\StudentScoreManagerCeePlusPlus\Debug;$(VCInstallDir)UnitTest\lib;G:\Development\Visual C++\StudentScoreManagerCeePlusPlus\StudentScoreManagerCeePlusPlus\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>FileIO.obj;Student.obj;StudentCSVFileManager.obj;StudentScoreManager.obj;StudentScoreManagerCeePlusPlus.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
