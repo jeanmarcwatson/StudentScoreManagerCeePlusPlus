@@ -153,10 +153,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\StudentScoreManagerCeePlusPlus\AbstractCSVOperations.h" />
+    <ClInclude Include="..\StudentScoreManagerCeePlusPlus\AbstractFileOperations.h" />
+    <ClInclude Include="..\StudentScoreManagerCeePlusPlus\CustomTypes.h" />
+    <ClInclude Include="..\StudentScoreManagerCeePlusPlus\FileIO.h" />
+    <ClInclude Include="..\StudentScoreManagerCeePlusPlus\PersonNameableNoMutable.h" />
+    <ClInclude Include="..\StudentScoreManagerCeePlusPlus\ScorableNonMutable.h" />
+    <ClInclude Include="..\StudentScoreManagerCeePlusPlus\Student.h" />
+    <ClInclude Include="..\StudentScoreManagerCeePlusPlus\StudentCsvFileException.h" />
+    <ClInclude Include="..\StudentScoreManagerCeePlusPlus\StudentCSVFileManager.h" />
+    <ClInclude Include="..\StudentScoreManagerCeePlusPlus\StudentScoreManager.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\StudentScoreManagerCeePlusPlus\FileIO.cpp" />
+    <ClCompile Include="..\StudentScoreManagerCeePlusPlus\Student.cpp" />
+    <ClCompile Include="..\StudentScoreManagerCeePlusPlus\StudentCSVFileManager.cpp" />
+    <ClCompile Include="..\StudentScoreManagerCeePlusPlus\StudentScoreManager.cpp" />
+    <ClCompile Include="..\StudentScoreManagerCeePlusPlus\StudentScoreManagerCeePlusPlus.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
