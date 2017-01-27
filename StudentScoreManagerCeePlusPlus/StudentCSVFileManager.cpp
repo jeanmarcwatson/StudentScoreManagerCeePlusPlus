@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <iostream>
 #include <memory>
+#include <Windows.h>
 
 #include "StudentCSVFileManager.h"
 #include "StudentCsvFileException.h"
@@ -30,7 +31,7 @@ namespace StudentScoring
 		// We cannot generate an output file if no input-file(name) provided
 		if (inputFileNameAndPathWithoutExtension.length() == 0)
 		{
-			throw new StudentCsvFileException("No respective CSV input-file provided. Output incorporates use of input-file name");
+			throw StudentCsvFileException("No respective CSV input-file provided. Output incorporates use of input-file name");
 		}
 
 		// We must have a valid input-file so proceed to create an output file
@@ -85,7 +86,8 @@ namespace StudentScoring
 		}
 		catch (StudentCsvFileException& exception)
 		{
-			std::cout << "Attempt to write the output CSV file generated message: " << exception.what() << std::endl;
+			std::string compositeMessage = "Attempt to write the output CSV file generated message: " + std::string(exception.what());
+			OutputDebugStringA(compositeMessage.c_str());			
 
 			/* Re-throw so dependant methods
 			* can also catch the exception */

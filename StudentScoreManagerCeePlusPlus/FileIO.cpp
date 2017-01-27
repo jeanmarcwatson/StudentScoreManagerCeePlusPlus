@@ -28,9 +28,10 @@ namespace StudentScoring
 			}
 
 		}
-		catch (std::exception& ex)
-		{
-			std::cout << "The file could not be written:" << ex.what() << std::endl;
+		catch (std::exception& exception)
+		{			
+			std::string compositeMessage ="The file could not be written:"  + std::string(exception.what());
+			OutputDebugStringA(compositeMessage.c_str());
 
 			// Allow exception to be caught be caller
 			throw;
@@ -59,10 +60,16 @@ namespace StudentScoring
 					contents->push_back(line);
 				}
 			}
+			else
+			{
+				std::string message = "Failed to read file: " + fileName;
+				throw std::exception(message.c_str());
+			}
 		}
 		catch (std::exception& exception)
-		{
-			std::cout << "The file could not be read: " << exception.what() << std::endl;
+		{			
+			std::string compositeMessage ="The file could not be read: " + std::string(exception.what());
+			OutputDebugStringA(compositeMessage.c_str());
 
 			// Allow exception to be caught be caller
 			throw;

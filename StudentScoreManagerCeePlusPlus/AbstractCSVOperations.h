@@ -5,7 +5,7 @@
 
 namespace StudentScoring
 {
-	// Abstract class defines required CVS functionality
+	// Abstract class defines required CSV functionality
 	class AbstractCSVOperations
 	{
 	public:
