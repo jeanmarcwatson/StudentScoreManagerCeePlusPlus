@@ -78,4 +78,8 @@
   <ItemGroup>
     <None Include="TestStudenScoreManagerCeePlusPlus.runsettings" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Data\students.txt" />
+    <Text Include="Data\students-variant.txt" />
+  </ItemGroup>
 </Project>
