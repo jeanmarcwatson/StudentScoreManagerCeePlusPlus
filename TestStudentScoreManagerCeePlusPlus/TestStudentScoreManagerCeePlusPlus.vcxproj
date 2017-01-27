@@ -188,10 +188,6 @@
   <ItemGroup>
     <None Include="TestStudenScoreManagerCeePlusPlus.runsettings" />
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="Data\students-variant.txt" />
-    <Text Include="Data\students.txt" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
