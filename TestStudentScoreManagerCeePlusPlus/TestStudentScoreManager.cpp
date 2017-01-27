@@ -27,15 +27,30 @@ namespace TestStudentScoreManagerCeePlusPlus
 		TEST_METHOD(TestOutputUsingInputFile)
 		{
 			StudentScoreManager studentScoreManager;
-			std::string inputFile { "\\Development\\Visual C++\\StudentScoreManagerCeePlusPlus\\TestStudentScoreManagerCeePlusPlus\\Data\\students.txt" };
+			std::string inputFile { "..\\..\\Data\\students.txt" };
 
-			studentScoreManager.CreateStudents(inputFile);
-			studentScoreManager.PersistStudents(studentScoreManager.GetStudents());			
+			try
+			{
+				studentScoreManager.CreateStudents(inputFile);
+				studentScoreManager.PersistStudents(studentScoreManager.GetStudents());
+			}
+			catch (std::exception& exception)
+			{
+				std::cout << exception.what() << std::endl;
+			}			
 
 			StudentCsvFileManager studentCSVFileManager;
-			std::string outputFile{ "\\Development\\Visual C++\\StudentScoreManagerCeePlusPlus\\TestStudentScoreManagerCeePlusPlus\\Data\\students-graded.txt" };
+			std::string outputFile{ "..\\..\\Data\\students-graded.txt" };
 
-			LinesUniquePtr outputCSVLines = studentCSVFileManager.ReadCsv(outputFile);
+			LinesUniquePtr outputCSVLines;
+			try
+			{
+				outputCSVLines = studentCSVFileManager.ReadCsv(outputFile);
+			}
+			catch (std::exception& exception)
+			{
+				std::cout << exception.what() << std::endl;
+			}			
 
 			auto counter = 0;
 			std::for_each(outputCSVLines->begin(), outputCSVLines->end(),
@@ -176,7 +191,7 @@ namespace TestStudentScoreManagerCeePlusPlus
 		{
 			StudentCsvFileManager studentCsvFileManager;
 			LinesUniquePtr outputCSVLines;
-			std::string inputFile{ "\\Development\\Visual C++\\StudentScoreManagerCeePlusPlus\\TestStudentScoreManagerCeePlusPlus\\Data\\students.txt" };
+			std::string inputFile{ "..\\..\\Data\\students.txt" };
 
 			try
 			{
@@ -213,7 +228,7 @@ namespace TestStudentScoreManagerCeePlusPlus
 		{
 			StudentCsvFileManager studentCsvFileManager;
 			Students students;
-			std::string inputFile{ "\\Development\\Visual C++\\StudentScoreManagerCeePlusPlus\\TestStudentScoreManagerCeePlusPlus\\Data\\students.txt" };
+			std::string inputFile{ "..\\..\\Data\\students.txt" };
 
 			try
 			{
@@ -270,7 +285,7 @@ namespace TestStudentScoreManagerCeePlusPlus
 
 			StudentCsvFileManager studentCsvFileManager;
 			Students students;
-			std::string inputFile{ "\\Development\\Visual C++\\StudentScoreManagerCeePlusPlus\\TestStudentScoreManagerCeePlusPlus\\Data\\students-variant.txt" };
+			std::string inputFile{ "..\\..\\Data\\students-variant.txt" };
 
 			try
 			{
@@ -348,7 +363,7 @@ namespace TestStudentScoreManagerCeePlusPlus
 
 			try
 			{
-				std::string inputFile{ "\\Development\\Visual C++\\StudentScoreManagerCeePlusPlus\\TestStudentScoreManagerCeePlusPlus\\Data\\students.txt" };
+				std::string inputFile{ "..\\..\\Data\\students.txt" };
 				studentScoreManager.CreateStudents(inputFile);
 			}
 			catch (StudentCsvFileException& exception)
