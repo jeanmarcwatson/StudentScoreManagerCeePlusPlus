@@ -108,8 +108,12 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
-      <Command>copy .\Debug\*.obj ..\TestStudentScoreManagerCeePlusPlus\Dependencies</Command>
+      <Command>copy .\Debug\*.obj "$(SolutionDir)\Dependencies"</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>rmdir -/s/q "$(SolutionDir)\Dependencies"
+mkdir "$(SolutionDir)\Dependencies"</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -141,8 +145,12 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
-      <Command>copy .\Release\*.obj ..\TestStudentScoreManagerCeePlusPlus\Dependencies</Command>
+      <Command>copy .\Release\*.obj "$(SolutionDir)\Dependencies"</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>rmdir -/s/q "$(SolutionDir)\Dependencies"
+mkdir "$(SolutionDir)\Dependencies"</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
