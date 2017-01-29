@@ -54,24 +54,24 @@ namespace TestStudentScoreManagerCeePlusPlus
 
 			auto counter = 0;
 			std::for_each(outputCSVLines->begin(), outputCSVLines->end(),
-				[&counter](const std::string& line)
-					{
-						switch (counter++)
-						{
-							case 0 :
-									Assert::IsTrue(line == "BUNDY,TED,88");
-									break;
-							case 1:
-									Assert::IsTrue(line == "SMITH,ALLAN,85");
-									break;
-							case 2:
-									Assert::IsTrue(line == "SMITH,FRANCIS,85");
-									break;
-							case 3:
-									Assert::IsTrue(line == "KING,MADISON,83");
-									break;						
-						}
-					});		
+				[&counter](const auto& line)
+			{
+				switch (counter++)
+				{
+					case 0 :
+							Assert::IsTrue(line == "BUNDY,TED,88");
+							break;
+					case 1:
+							Assert::IsTrue(line == "SMITH,ALLAN,85");
+							break;
+					case 2:
+							Assert::IsTrue(line == "SMITH,FRANCIS,85");
+							break;
+					case 3:
+							Assert::IsTrue(line == "KING,MADISON,83");
+							break;						
+				}
+			});		
 		}		
 	};
 
@@ -204,7 +204,7 @@ namespace TestStudentScoreManagerCeePlusPlus
 
 			auto counter = 0;
 			std::for_each(outputCSVLines->begin(), outputCSVLines->end(),
-				[&counter](const std::string& line)
+				[&counter](const auto& line)
 			{
 				switch (counter++)
 				{

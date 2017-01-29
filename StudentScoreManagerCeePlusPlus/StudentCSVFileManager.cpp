@@ -45,13 +45,13 @@ namespace StudentScoring
 		Students students;
 
 		// Remove all blank lines from container
-		std::remove_if(csvContent->begin(), csvContent->end(), [&](const std::string& line) { return line.length() == 0; });
+		std::remove_if(csvContent->begin(), csvContent->end(), [&](const auto& line) { return line.length() == 0; });
 
 		// Initialise Student objects using the CSV string
-		for_each(csvContent->begin(), csvContent->end(),
-			[&](const std::string& line) mutable -> Students
+		std::for_each(csvContent->begin(), csvContent->end(),
+			[&](const auto& line) mutable -> Students
 		{
-			if (std::count_if(line.begin(), line.end(), [](char i) {return i == ','; }) == 2)
+			if (std::count_if(line.begin(), line.end(), [](auto i) {return i == ','; }) == 2)
 			{
 				auto student = std::make_shared<Student>(line);
 				students.push_back(student);

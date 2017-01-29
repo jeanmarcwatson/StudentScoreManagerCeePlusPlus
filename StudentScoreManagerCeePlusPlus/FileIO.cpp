@@ -24,13 +24,13 @@ namespace StudentScoring
 			if (outputFileStream.is_open())
 			{
 				/* Use a lambda to iterate through each line and write it to the output-stream */
-				std::for_each(contents.begin(), contents.end(), [&](const std::string& str) { outputFileStream << str.c_str(); });
+				std::for_each(contents.begin(), contents.end(), [&](const auto& str) { outputFileStream << str.c_str(); });
 			}
 
 		}
 		catch (std::exception& exception)
 		{			
-			std::string compositeMessage ="The file could not be written:"  + std::string(exception.what());
+			std::string compositeMessage ="The file could not be written:" + std::string(exception.what());
 			OutputDebugStringA(compositeMessage.c_str());
 
 			// Allow exception to be caught be caller

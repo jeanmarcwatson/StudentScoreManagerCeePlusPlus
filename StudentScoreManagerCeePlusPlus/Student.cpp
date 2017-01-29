@@ -65,7 +65,7 @@ namespace StudentScoring
 		/*	Use a mutable and returnable lambda (closure) to iterate the string 
 			build the container */
 		std::for_each(input.begin(), input.end(),
-			[&outputStr, &lines](const char& character) mutable -> IndexedLines
+			[&outputStr, &lines](const auto& character) mutable -> IndexedLines
 		{
 			if (character != ',')
 			{
