@@ -16,7 +16,7 @@ namespace StudentScoring
 	}
 
 	// CSV Reader method which is abstracted away from the notion of Student types
-	LinesUniquePtr StudentCsvFileManager::ReadCsv(std::string& sourceFile)
+	LinesUniquePtr StudentCsvFileManager::ReadCsv(const std::string& sourceFile)
 	{
 		// Input-filename kept as intrinsic to the creation of the output-CSV-file
 		inputFileNameAndPathWithoutExtension = sourceFile.substr(0, sourceFile.find_last_of("."));
@@ -26,7 +26,7 @@ namespace StudentScoring
 	}
 
 	// CSV Writer method
-	void StudentCsvFileManager::WriteCsv(Lines& content)
+	void StudentCsvFileManager::WriteCsv(const Lines& content)
 	{
 		// We cannot generate an output file if no input-file(name) provided
 		if (inputFileNameAndPathWithoutExtension.length() == 0)
@@ -39,7 +39,7 @@ namespace StudentScoring
 	}
 
 	// A method to return CSV data from input-file as a container of Student objects
-	Students StudentCsvFileManager::ReadStudents(std::string& sourceFile)
+	Students StudentCsvFileManager::ReadStudents(const std::string& sourceFile)
 	{
 		LinesUniquePtr csvContent = std::move(ReadCsv(sourceFile));
 		Students students;
@@ -64,7 +64,7 @@ namespace StudentScoring
 	}
 
 	// A method to serialise (loosely speaking) a container of Student objects as CSV to a text file
-	void StudentCsvFileManager::WriteStudents(Students& students)
+	void StudentCsvFileManager::WriteStudents(const Students& students)
 	{
 		Lines lines;
 
@@ -73,7 +73,7 @@ namespace StudentScoring
 			/*	Write each student as a serliased line of CSV representing the ordered 
 				data member contents */
 			std::for_each(students.begin(), students.end(),
-				[&lines](std::shared_ptr<Student>& student) mutable -> Lines
+				[&lines](const std::shared_ptr<Student>& student) mutable -> Lines
 			{
 				/* In the absence of any C++ provided reflection of types we set the data-member output order (to CSV) here */
 				lines.push_back(student->GetLastName() + "," + student->GetFirstName() + "," + student->GetScoreString() + "\n");

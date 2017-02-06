@@ -24,7 +24,7 @@ namespace StudentScoring
 	public:
 
 		// Provide read-only access the student container
-		inline Students GetStudents()
+		inline const Students& GetStudents()
 		{
 			return students;
 		}
@@ -33,10 +33,10 @@ namespace StudentScoring
 		StudentScoreManager() {}
 
 		// Simple method for creating the container of Students using a CSV file
-		void CreateStudents(std::string& sourceFile);
+		void CreateStudents(const std::string& sourceFile);
 
 		/* Method to allow the sorted student container to be written
 		* to an output CSV file */
-		void PersistStudents(Students& students);
+		void PersistStudents(const Students& students);
 	};
 }

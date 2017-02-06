@@ -14,7 +14,7 @@ namespace StudentScoring
 {
 
 	/* Concrete implementation for the writing of a file */
-	void FileIO::WriteFile(std::string& fileName, Lines& contents)
+	void FileIO::WriteFile(const std::string& fileName, const Lines& contents)
 	{
 		std::ofstream outputFileStream(fileName);
 
@@ -41,7 +41,7 @@ namespace StudentScoring
 	}
 
 	/* Concrete implementation for the reading of a file */
-	LinesUniquePtr FileIO::ReadFile(std::string& fileName)
+	LinesUniquePtr FileIO::ReadFile(const std::string& fileName)
 	{
 		/* Use a unique pointer as only need one instance of the file data container - 
 			prevent copying for efficiencies sake */

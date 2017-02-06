@@ -30,7 +30,7 @@ namespace StudentScoring
 		inline std::string GetScoreString() { return std::to_string(score); }
 
 		/* Force explicit CTOR(s) */
-		explicit Student(std::string& firstName, std::string& lastName, ScoreValue score);
+		explicit Student(const std::string& firstName, const std::string& lastName, ScoreValue score);
 		explicit Student(const std::string& studentDetails);
 	};
 }

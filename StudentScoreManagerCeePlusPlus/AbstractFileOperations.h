@@ -10,7 +10,7 @@ namespace StudentScoring
 	{
 	public:
 
-		virtual void WriteFile(std::string& fileName, Lines& contents) = 0;
-		virtual LinesUniquePtr ReadFile(std::string& fileName) = 0;
+		virtual void WriteFile(const std::string& fileName, const Lines& contents) = 0;
+		virtual LinesUniquePtr ReadFile(const std::string& fileName) = 0;
 	};
 }

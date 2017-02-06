@@ -10,7 +10,7 @@
 
 namespace StudentScoring
 {
-	Student::Student(std::string& firstName, std::string& lastName, ScoreValue score)
+	Student::Student(const std::string& firstName, const std::string& lastName, ScoreValue score)
 		: PersonNameableNonMutable(firstName, lastName), ScorableNonMutable(score)
 	{
 		/* Simply initialises our NVI classes (interfaces) */

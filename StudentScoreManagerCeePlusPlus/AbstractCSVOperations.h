@@ -10,7 +10,7 @@ namespace StudentScoring
 	{
 	public:
 
-		virtual void WriteCsv(Lines& content) = 0;
-		virtual LinesUniquePtr ReadCsv(std::string& sourceFile) = 0;
+		virtual void WriteCsv(const Lines& content) = 0;
+		virtual LinesUniquePtr ReadCsv(const std::string& sourceFile) = 0;
 	};
 }

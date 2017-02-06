@@ -19,15 +19,15 @@ namespace StudentScoring
 		StudentCsvFileManager();
 
 		// CSV Reader method which is abstracted away from the notion of Student types
-		LinesUniquePtr ReadCsv(std::string& sourceFile) override;
+		LinesUniquePtr ReadCsv(const std::string& sourceFile) override;
 
 		// CSV Writer method
-		void WriteCsv(Lines& content) override;
+		void WriteCsv(const Lines& content) override;
 
 		// A method to return CSV data from input-file as a container of Student objects
-		Students ReadStudents(std::string& sourceFile);
+		Students ReadStudents(const std::string& sourceFile);
 
 		// A method to serialise (loosely speaking) a container of Student objects as CSV to a text file
-		void WriteStudents(Students& students);
+		void WriteStudents(const Students& students);
 	};
 }

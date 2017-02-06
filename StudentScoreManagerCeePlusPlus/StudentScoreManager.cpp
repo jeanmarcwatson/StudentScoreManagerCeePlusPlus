@@ -7,7 +7,7 @@
 namespace StudentScoring
 {
 	// Simple method for creating the container of Students using a CSV file
-	void StudentScoreManager::CreateStudents(std::string& sourceFile)
+	void StudentScoreManager::CreateStudents(const std::string& sourceFile)
 	{
 		// Create our Student container based upon the contents of the input-file
 		students = studentCSVFileManager.ReadStudents(sourceFile);
@@ -18,7 +18,7 @@ namespace StudentScoring
 
 	/* Method to allow the sorted student container to be written
 	* to an output CSV file */
-	void StudentScoreManager::PersistStudents(Students& students)
+	void StudentScoreManager::PersistStudents(const Students& students)
 	{
 		/* Output-file is inferred from input file so we only provide the
 		* students */

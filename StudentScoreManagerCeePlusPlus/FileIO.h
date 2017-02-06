@@ -12,9 +12,9 @@ namespace StudentScoring
 	public:
 
 		/* Concrete and non-extendable implementation for file-writing */
-		void WriteFile(std::string& fileName, Lines& contents) final;
+		void WriteFile(const std::string& fileName, const Lines& contents) final;
 
 		/* Concrete and non-extendable implementation for file-reading */
-		LinesUniquePtr ReadFile(std::string& fileName) final;
+		LinesUniquePtr ReadFile(const std::string& fileName) final;
 	};
 }

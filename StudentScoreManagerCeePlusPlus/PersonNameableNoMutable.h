@@ -17,7 +17,7 @@ namespace StudentScoring
 		PersonNameableNonMutable(const std::string& studentDetails) : firstName(""), lastName("") {};
 
 		/* CTOR only available to derived class (Non Virtual Interface pattern - NVI) */
-		PersonNameableNonMutable(std::string& firstName, std::string& lastName) : firstName(firstName), lastName(lastName) {};
+		PersonNameableNonMutable(const std::string& firstName, const std::string& lastName) : firstName(firstName), lastName(lastName) {};
 
 		/* Prevent the use of default constructor */
 		PersonNameableNonMutable() = delete;
