@@ -41,10 +41,10 @@ namespace StudentScoring
 		auto yLastName = y->GetLastName();
 
 		/* Work in lowercase for names */
-		std::transform(xFirstName.begin(), xFirstName.end(), xFirstName.begin(), ::tolower);
-		std::transform(xLastName.begin(), xLastName.end(), xLastName.begin(), ::tolower);
-		std::transform(yFirstName.begin(), yFirstName.end(), yFirstName.begin(), ::tolower);
-		std::transform(yLastName.begin(), yLastName.end(), yLastName.begin(), ::tolower);
+		std::transform(begin(xFirstName), end(xFirstName), begin(xFirstName), ::tolower);
+		std::transform(begin(xLastName), end(xLastName), begin(xLastName), ::tolower);
+		std::transform(begin(yFirstName), end(yFirstName), begin(yFirstName), ::tolower);
+		std::transform(begin(yLastName), end(yLastName), begin(yLastName), ::tolower);
 
 		/* Score is the first discriminator but if equal revert
 		* to comparing last-name and if equality for that then

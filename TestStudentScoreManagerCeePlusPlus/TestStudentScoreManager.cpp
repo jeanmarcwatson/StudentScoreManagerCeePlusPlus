@@ -240,7 +240,7 @@ namespace TestStudentScoreManagerCeePlusPlus
 			}
 
 			auto counter = 0;
-			std::for_each(students.begin(), students.end(),
+			std::for_each(begin(students), end(students),
 				[&counter](std::shared_ptr<Student>& student)
 			{
 				switch (counter++)
@@ -297,7 +297,7 @@ namespace TestStudentScoreManagerCeePlusPlus
 			}
 
 			auto counter = 0;
-			std::for_each(students.begin(), students.end(),
+			std::for_each(begin(students), end(students),
 				[&counter](std::shared_ptr<Student>& student)
 			{
 				switch (counter++)
@@ -374,7 +374,7 @@ namespace TestStudentScoreManagerCeePlusPlus
 			auto students = studentScoreManager.GetStudents();
 
 			auto counter = 0;
-			std::for_each(students.begin(), students.end(),
+			std::for_each(begin(students), end(students),
 				[&counter](std::shared_ptr<Student>& student)
 			{
 				switch (counter++)

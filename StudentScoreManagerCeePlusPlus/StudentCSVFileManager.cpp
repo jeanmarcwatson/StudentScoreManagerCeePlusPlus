@@ -41,7 +41,7 @@ namespace StudentScoring
 	// A method to return CSV data from input-file as a container of Student objects
 	Students StudentCsvFileManager::ReadStudents(const std::string& sourceFile)
 	{
-		LinesUniquePtr csvContent = std::move(ReadCsv(sourceFile));
+		LinesUniquePtr csvContent = std::move(ReadCsv(sourceFile));		
 		Students students;
 
 		// Remove all blank lines from container
@@ -51,7 +51,7 @@ namespace StudentScoring
 		std::for_each(csvContent->begin(), csvContent->end(),
 			[&](const auto& line) mutable -> Students
 		{
-			if (std::count_if(line.begin(), line.end(), [](auto i) {return i == ','; }) == 2)
+			if (std::count_if(begin(line), end(line), [](auto i) {return i == ','; }) == 2)
 			{
 				auto student = std::make_shared<Student>(line);
 				students.push_back(student);
@@ -72,7 +72,7 @@ namespace StudentScoring
 		{
 			/*	Write each student as a serliased line of CSV representing the ordered 
 				data member contents */
-			std::for_each(students.begin(), students.end(),
+			std::for_each(begin(students), end(students),
 				[&lines](const std::shared_ptr<Student>& student) mutable -> Lines
 			{
 				/* In the absence of any C++ provided reflection of types we set the data-member output order (to CSV) here */
